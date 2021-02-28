@@ -105,6 +105,8 @@
     $pathTextBox8.Size = '100,20'
     $folderForm.Controls.Add($pathTextBox8)
 
+    
+
     $selectButton = New-Object System.Windows.Forms.Button
     $selectButton.Text = 'Register'
     $selectButton.Location = '20,350'
@@ -115,8 +117,37 @@
     #Add Button event 
     $SelectButton.Add_Click(
         {    
-		[System.Windows.Forms.MessageBox]::Show("CI Output", $Status)
-        }
+        [reflection.assembly]::LoadwithPartialName("System.windows.Forms") | Out-Null
+
+
+        $basicForm20 = New-Object System.windows.Forms.Form
+        $folderForm20 = New-Object System.Windows.Forms.Form
+
+        Add-Type -AssemblyName System.Windows.Forms
+        Add-Type -AssemblyName System.Drawing
+
+        $folderForm20.Text ="CI Output"
+        $folderForm20.width = 300
+        $folderForm20.Height = 470
+        $folderForm20.AutoSize = $True
+
+        $label20 = New-Object System.Windows.Forms.Label
+        $label20.Name = "Status2"
+        $label20.Location = '20,15'
+        $label20.Size = '70,15'
+        $label20.Text = "Output:"
+        $folderForm20.Controls.Add($label20)
+
+        $outputBox20 = New-Object System.Windows.Forms.TextBox
+        $outputBox20.Location = '20,32'
+        $outputBox20.Size = '240,370'
+        $outputBox20.Multiline = $True
+        $folderForm20.Controls.Add($outputBox20)
+
+
+
+        $folderForm20.ShowDialog()
+ }
     )
 
 
