@@ -1,3 +1,4 @@
+        #Version 1.1
     [reflection.assembly]::LoadwithPartialName("System.windows.Forms") | Out-Null
 
     $basicForm = New-Object System.windows.Forms.Form
@@ -17,6 +18,7 @@
     $folderForm.Controls.Add($label)
 
     $pathTextBox = New-Object System.Windows.Forms.TextBox
+    $pathTextBox.Name = "Status: "
     $pathTextBox.Location = '20,30'
     $pathTextBox.Size = '100,20'
     $folderForm.Controls.Add($pathTextBox)
@@ -78,7 +80,7 @@
 
     $pathTextBox6 = New-Object System.Windows.Forms.TextBox
     $pathTextBox6.Location = '20,230'
-    $pathTextBox6.Size = '100,20'
+    $pathTextBox6.Size = '150,20'
     $folderForm.Controls.Add($pathTextBox6)
 
     $label7 = New-Object System.Windows.Forms.Label
@@ -90,7 +92,7 @@
 
     $pathTextBox7 = New-Object System.Windows.Forms.TextBox
     $pathTextBox7.Location = '20,270'
-    $pathTextBox7.Size = '100,20'
+    $pathTextBox7.Size = '150,20'
     $folderForm.Controls.Add($pathTextBox7)
 
     $label8 = New-Object System.Windows.Forms.Label
@@ -102,7 +104,7 @@
 
     $pathTextBox8 = New-Object System.Windows.Forms.TextBox
     $pathTextBox8.Location = '20,310'
-    $pathTextBox8.Size = '100,20'
+    $pathTextBox8.Size = '50,20'
     $folderForm.Controls.Add($pathTextBox8)
 
     
@@ -128,7 +130,7 @@
 
         $folderForm20.Text ="CI Output"
         $folderForm20.width = 300
-        $folderForm20.Height = 470
+        $folderForm20.Height = 325
         $folderForm20.AutoSize = $True
 
         $label20 = New-Object System.Windows.Forms.Label
@@ -140,11 +142,31 @@
 
         $outputBox20 = New-Object System.Windows.Forms.TextBox
         $outputBox20.Location = '20,32'
-        $outputBox20.Size = '240,370'
+        $outputBox20.Size = '240,225'
         $outputBox20.Multiline = $True
         $folderForm20.Controls.Add($outputBox20)
 
-
+        $outputBox20.AppendText("-----------These items below have been updated / created in the CMDB-----------")
+        $outputBox20.AppendText("`r`n`r`nStatus: ")
+        $outputBox20.AppendText($pathTextBox.text)
+        $outputBox20.AppendText("`r`nFriendly Name: ")
+	$outputBox20.AppendText($pathTextBox2.text)
+	$outputBox20.AppendText("`r`nAlt CI: UCLP")
+	$outputBox20.AppendText($pathTextBox2.text)
+	$outputBox20.AppendText("`r`nSerial Number: ")
+	$outputBox20.AppendText($pathTextBox2.text)
+	$outputBox20.AppendText("`r`nAsset Number: ")
+	$outputBox20.AppendText($pathTextBox3.text)
+	$outputBox20.AppendText("`r`nCI Type: ")
+	$outputBox20.AppendText($pathTextBox4.text)
+	$outputBox20.AppendText("`r`nModal: ")
+	$outputBox20.AppendText($pathTextBox5.text)
+	$outputBox20.AppendText("`r`nPrimary Contact: ")
+	$outputBox20.AppendText($pathTextBox6.text)
+	$outputBox20.AppendText("`r`nBuilding Location: ")
+	$outputBox20.AppendText($pathTextBox7.text)
+	$outputBox20.AppendText("`r`nRoom Location: ")
+	$outputBox20.AppendText($pathTextBox8.text)
 
         $folderForm20.ShowDialog()
  }
