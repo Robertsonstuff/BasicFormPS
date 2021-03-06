@@ -1,4 +1,4 @@
-function CIinfo{    #Version 1.2
+function CIForm{    #Version 1.2
     [reflection.assembly]::LoadwithPartialName("System.windows.Forms") | Out-Null
 
     $basicForm = New-Object System.windows.Forms.Form
