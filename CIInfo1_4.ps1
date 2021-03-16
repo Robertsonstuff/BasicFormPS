@@ -1,4 +1,4 @@
-#Version 1.3
+#Version 1.4
     [reflection.assembly]::LoadwithPartialName("System.windows.Forms") | Out-Null
 
     $basicForm = New-Object System.windows.Forms.Form
