@@ -1,2 +1,2 @@
 # BasicFormPS
-Simple GUI in Powershell to register simple inputs and display outputs in a basic format
+Simple GUI in Powershell to register inputs and display outputs in a basic format. You'll find a few different updates that have evolved to become more user friendly. The latest version has copy to clipboard functionality and some 'if statements' to make sure that the user is filing out the form correctly. Try it for yourself and play around with information you would need for your project. I'm really enjoying how much functionality you can add without having to download any other plug-ins, modules or supporting programs. Enjoy
